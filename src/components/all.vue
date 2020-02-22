@@ -68,7 +68,7 @@ export default {
       this.error = false;
       this.loading = true;
       await this.axios
-        .get(`http://localhost:8080/all/${this.$route.params.serverID}`)
+        .get(`/api/all/${this.$route.params.serverID}`)
         .then(data => {
           if (data.data.data.length == 0) {
             this.error = true;
