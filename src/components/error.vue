@@ -6,9 +6,9 @@
 
 <script>
 export default {
-  name: "error",
+  name: 'error',
   components: {}
-};
+}
 </script>
 
 <style lang="sass">

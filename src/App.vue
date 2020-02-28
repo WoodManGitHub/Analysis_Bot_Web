@@ -19,13 +19,13 @@
 
 <script>
 export default {
-  name: "app",
-  data() {
+  name: 'app',
+  data () {
     return {
-      serverID: ""
-    };
+      serverID: ''
+    }
   }
-};
+}
 </script>
 
 <style lang="sass">
@@ -42,6 +42,5 @@ export default {
   display: flex
   flex-direction: column
   align-items: center
-
 
 </style>

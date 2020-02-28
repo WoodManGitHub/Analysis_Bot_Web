@@ -10,16 +10,16 @@
 </template>
 
 <script>
-import loading from "./loading.vue";
-import error from "./error.vue";
-import * as visavail from "../assets/js/visavail";
+import loading from './loading.vue'
+import error from './error.vue'
+import * as visavail from '../assets/js/visavail'
 
 const options = {
-  id_div_container: "visavail_container",
-  id_div_graph: "visavail_graph",
+  id_div_container: 'visavail_container',
+  id_div_graph: 'visavail_graph',
   icon: {
-    class_has_data: "fas fa-fw fa-check",
-    class_has_no_data: "fas fa-fw fa-times"
+    class_has_data: 'fas fa-fw fa-check',
+    class_has_no_data: 'fas fa-fw fa-times'
   },
   custom_categories: true,
   zoom: {
@@ -28,22 +28,22 @@ const options = {
   sub_chart: {
     enabled: true,
     height: 150,
-    graph: { enabled: "" }
+    graph: { enabled: '' }
   },
   tooltip: {
     height: 10,
-    position: "overlay",
+    position: 'overlay',
     left_spacing: 20
   },
   custom_time_format: {
-    format_millisecond: ".%L",
-    format_second: ":%S",
-    format_minute: "%H:%M",
-    format_hour: "%I %p",
-    format_day: "%a %d",
-    format_week: "%b %d",
-    format_month: "%B",
-    format_year: "%Y"
+    format_millisecond: '.%L',
+    format_second: ':%S',
+    format_minute: '%H:%M',
+    format_hour: '%I %p',
+    format_day: '%a %d',
+    format_week: '%b %d',
+    format_month: '%B',
+    format_year: '%Y'
   },
   graph: {
     height: 25
@@ -51,53 +51,55 @@ const options = {
   responsive: {
     enabled: true
   }
-};
+}
 
 export default {
-  name: "month",
+  name: 'month',
   components: { loading, error },
-  data() {
+  data () {
     return {
       monthTime: null,
       loading: false,
       error: false
-    };
+    }
   },
   methods: {
-    async getMonth() {
-      this.error = false;
-      this.loading = true;
-      await this.axios
-        .get(`/api/month/${this.$route.params.serverID}`)
-        .then(data => {
-          if (data.data.data.length == 0) {
-            this.error = true;
-          } else {
-            this.monthTime = data.data;
-          }
-        });
-      this.loading = false;
+    async getMonth () {
+      this.error = false
+      this.loading = true
+      await this.$axios.month(this.$route.params.serverID).then(data => {
+        if (data.length === 0) {
+          this.error = true
+        } else {
+          this.monthTime = JSON.parse(data)
+        }
+      })
+      this.loading = false
     },
-    refresh() {
-      this.chart.destroy();
+    refresh () {
+      this.chart.destroy()
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       this.getMonth().then(result => {
-        this.chart = visavail.generate(options, this.monthTime.data);
-      });
+        this.chart = visavail.generate(options, this.monthTime.data)
+      })
     }
   },
-  created() {
+  created () {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.getMonth().then(result => {
-      this.chart = visavail.generate(options, this.monthTime.data);
-    });
+      this.chart = visavail.generate(options, this.monthTime.data)
+    })
   },
   watch: {
-    $route(to, from) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    $route (to, from) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       this.getMonth().then(result => {
-        this.chart = visavail.generate(options, this.monthTime.data);
-      });
+        this.chart = visavail.generate(options, this.monthTime.data)
+      })
     }
   }
-};
+}
 </script>
 
 <style lang="sass">
