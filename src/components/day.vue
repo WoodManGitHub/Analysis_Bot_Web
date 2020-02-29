@@ -44,7 +44,6 @@ export default {
     }
   },
   created () {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.getDay().then(result => {
       timeline.methods.draw(result.data)
     })
