@@ -1,7 +1,7 @@
 <template lang="pug">
-    div.col-md-12
-        #visavail_container.visavail(style="overflow: hidden;")
-          p#visavail_graph
+  div.col-md-12
+    #visavail_container.visavail(style="overflow: hidden;")
+      p#visavail_graph
 </template>
 <script>
 import * as visavail from '../assets/js/visavail'
