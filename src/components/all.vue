@@ -4,58 +4,17 @@
     loading(v-if="loading")
     error(v-if="error")
     div.container(v-else="loading || error")
-      div.col-md-12
-        #visavail_container.visavail(style="overflow: hidden;")
-          p#visavail_graph
+      timeline
 </template>
 
 <script>
 import loading from './loading.vue'
 import error from './error.vue'
-import * as visavail from '../assets/js/visavail'
-
-const options = {
-  id_div_container: 'visavail_container',
-  id_div_graph: 'visavail_graph',
-  icon: {
-    class_has_data: 'fas fa-fw fa-check',
-    class_has_no_data: 'fas fa-fw fa-times'
-  },
-  custom_categories: true,
-  zoom: {
-    enabled: true
-  },
-  sub_chart: {
-    enabled: true,
-    height: 150,
-    graph: { enabled: '' }
-  },
-  tooltip: {
-    height: 10,
-    position: 'overlay',
-    left_spacing: 20
-  },
-  custom_time_format: {
-    format_millisecond: '.%L',
-    format_second: ':%S',
-    format_minute: '%H:%M',
-    format_hour: '%I %p',
-    format_day: '%a %d',
-    format_week: '%b %d',
-    format_month: '%B',
-    format_year: '%Y'
-  },
-  graph: {
-    height: 25
-  },
-  responsive: {
-    enabled: true
-  }
-}
+import timeline from './timeline.vue'
 
 export default {
   name: 'all',
-  components: { loading, error },
+  components: { loading, error, timeline },
   data () {
     return {
       allTime: null,
@@ -75,27 +34,25 @@ export default {
         }
       })
       this.loading = false
+      return this.allTime
     },
     refresh () {
-      this.chart.destroy()
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      timeline.methods.destory()
       this.getAll().then(result => {
-        this.chart = visavail.generate(options, this.allTime.data)
+        timeline.methods.draw(result.data)
       })
     }
   },
   created () {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.getAll().then(result => {
-      this.chart = visavail.generate(options, this.allTime.data)
+      timeline.methods.draw(result.data)
     })
   },
   watch: {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     $route (to, from) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       this.getAll().then(result => {
-        this.chart = visavail.generate(options, this.allTime.data)
+        timeline.methods.draw(result.data)
       })
     }
   }
