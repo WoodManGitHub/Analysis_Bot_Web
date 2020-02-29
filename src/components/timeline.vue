@@ -44,18 +44,19 @@ const options = {
 
 export default {
   name: 'timeline',
-  data () {
-    return {
-      chart: null
-    }
-  },
   methods: {
     draw (data) {
       this.chart = visavail.generate(options, data)
     },
     destory () {
-      this.chart.destroy()
+      if (this.chart !== undefined) {
+        this.chart.destroy()
+      }
     }
   }
 }
 </script>
+
+<style lang='sass'>
+@import "../assets/sass/libs/visavail"
+</style>
