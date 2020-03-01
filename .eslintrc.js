@@ -16,8 +16,7 @@ module.exports = {
   },
 
   ignorePatterns: [
-    'node_modules/',
-    'src/assets/js/'
+    'node_modules/'
   ],
 
   rules: {
