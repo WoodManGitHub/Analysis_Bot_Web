@@ -1,12 +1,13 @@
 <template lang='pug'>
   #app
-    ul.nav.nav-tabs
-      li.nav-item
-        a.nav-link.active(href="#") Home
-      li.nav-item
-        a.nav-link(href="https://github.com/WoodManGitHub/Analysis_Bot") Repo
-      li.nav-item
-        a.nav-link(href="https://woodman.pw") Dev
+    nav.navbar.navbar-dark.bg-dark
+      ul.nav.justify-content-center
+        li.nav-item
+          a.nav-link(href="#") Home
+        li.nav-item
+          a.nav-link(href="https://github.com/WoodManGitHub/Analysis_Bot") Repo
+        li.nav-item
+          a.nav-link(href="https://woodman.pw") Dev
     .input-group.mb-3
       input.form-control(type='text' placeholder='Enter Discord Server ID To Continue...' v-model.trim="serverID")
     .button-group(v-if="serverID != ''")
