@@ -2,9 +2,9 @@ import axios from 'axios'
 const config = {
   timeout: 60 * 1000
 }
-// tslint:disable-next-line: variable-name
+
 const _axios = axios.create(config)
-// tslint:disable-next-line: no-shadowed-variable
+
 _axios.interceptors.request.use((config) => {
   return config
 }, (error) => {
