@@ -1,6 +1,6 @@
 <template lang="pug">
   .root(:class="loading? 'loading':''")
-    button.refresh-btn.btn.btn-primary(v-if="!loading" @click="refresh()") Refresh
+    button.refresh-btn.btn.btn-color(v-if="!loading" @click="refresh()") Refresh
     loading(v-if="loading")
     error(v-if="error")
     div.container(v-else="loading || error")
