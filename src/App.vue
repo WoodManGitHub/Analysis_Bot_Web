@@ -1,19 +1,15 @@
 <template lang='pug'>
   #app
     nav.navbar.navbar-dark.bg-dark
-      ul.nav.justify-content-center
-        li.nav-item
-          a.nav-link(href=".") Home
-        li.nav-item
-          a.nav-link(href="https://github.com/WoodManGitHub/Analysis_Bot") Repo
-        li.nav-item
-          a.nav-link(href="https://woodman.pw") Developer
+      a.btn.nav-link(href=".") Home
+      a.btn.nav-link(href="https://github.com/WoodManGitHub/Analysis_Bot") GitHub
+    h1.title Discord Online Analyzer
     .input-group.mb-3
       input.form-control(type='text' placeholder='Enter Discord Server ID To Continue...' v-model.trim="serverID")
-    .button-group(v-if="serverID != ''")
-      router-link.btn.btn-color(:to="'/day/'+serverID") Today
-      router-link.btn.btn-color(:to="'/month/'+serverID") This Month
-      router-link.btn.btn-color(:to="'/all/'+serverID") All
+      .button-group
+        router-link.button.btn.btn-color(:class="(serverID)?'':'disabled'" :to="'/day/'+serverID") Today
+        router-link.button.btn.btn-color(:class="(serverID)?'':'disabled'" :to="'/month/'+serverID") This Month
+        router-link.button.btn.btn-color(:class="(serverID)?'':'disabled'" :to="'/all/'+serverID") All
     hr
     router-view
 </template>
@@ -25,6 +21,9 @@ export default {
     return {
       serverID: ''
     }
+  },
+  created () {
+    this.serverID = this.$router.history.current.params.serverID
   }
 }
 </script>

@@ -1,20 +1,23 @@
 <template lang="pug">
-  .root(:class="loading? 'loading':''")
-    button.refresh-btn.btn.btn-color(v-if="!loading" @click="refresh()") Refresh
-    loading(v-if="loading")
-    error(v-if="error")
-    div.container(v-else="loading || error")
-      timeline
+  .page-root
+    .container.chart-container(:class="loading? 'loading':''")
+      button.refresh-btn.btn(v-if="!loading" @click="refresh()") Refresh
+      loading(v-if="loading")
+      error(v-if="error")
+      div(v-else="loading || error")
+        timeline
+    how_to_use(v-if="error")
 </template>
 
 <script>
 import loading from './loading.vue'
 import error from './error.vue'
 import timeline from './timeline.vue'
+import how_to_use from './how_to_use.vue'
 
 export default {
   name: 'container',
-  components: { loading, error, timeline },
+  components: { loading, error, timeline, how_to_use },
   data () {
     return {
       timeData: null,
@@ -38,7 +41,7 @@ export default {
       this.loading = true
       await this.$axios.get(this.type, this.serverID).then(result => {
         const timeData = JSON.parse(result)
-        if (timeData.data.length === 0) {
+        if (timeData.data.dataSets.length <= 1) {
           this.error = true
         } else {
           this.timeData = timeData.data
@@ -50,12 +53,14 @@ export default {
     refresh () {
       timeline.methods.destory()
       this.get().then(result => {
+        if (result == null) return
         timeline.methods.draw(result)
       })
     }
   },
   created () {
     this.get().then(result => {
+      if (result == null) return
       timeline.methods.draw(result)
     })
   },
@@ -70,4 +75,5 @@ export default {
 
 <style lang="sass">
 @import "../assets/sass/components/chart_container"
+@import "../assets/sass/components/container"
 </style>
