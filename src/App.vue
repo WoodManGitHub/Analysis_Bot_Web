@@ -4,12 +4,11 @@
       a.btn.nav-link(href=".") Home
       a.btn.nav-link(href="https://github.com/WoodManGitHub/Analysis_Bot") GitHub
     h1.title Discord Online Analyzer
-    .input-group.mb-3
-      input.form-control(type='text' placeholder='Enter Discord Server ID To Continue...' v-model.trim="serverID")
-      .button-group
-        router-link.button.btn.btn-color(:class="(serverID)?'':'disabled'" :to="'/day/'+serverID") Today
-        router-link.button.btn.btn-color(:class="(serverID)?'':'disabled'" :to="'/month/'+serverID") This Month
-        router-link.button.btn.btn-color(:class="(serverID)?'':'disabled'" :to="'/all/'+serverID") All
+    .input-group.mb-3.row
+      input.col-md-6.form-control(type='text' placeholder='Enter Discord Server ID To Continue...' v-model.trim="serverID")
+      router-link.col-md-2.btn(:class="(serverID)?'':'disabled'" :to="'/day/'+serverID") Today
+      router-link.col-md-2.btn(:class="(serverID)?'':'disabled'" :to="'/month/'+serverID") This Month
+      router-link.col-md-2.btn(:class="(serverID)?'':'disabled'" :to="'/all/'+serverID") All
     hr
     router-view
 </template>

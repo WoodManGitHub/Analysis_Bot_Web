@@ -1,6 +1,6 @@
 <template lang="pug">
   .page-root
-    .container.chart-container(:class="loading? 'loading':''")
+    .container(:class="loading? 'transparent':''")
       button.refresh-btn.btn(v-if="!loading" @click="refresh()") Refresh
       loading(v-if="loading")
       error(v-if="error")
@@ -74,6 +74,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../assets/sass/components/chart_container"
 @import "../assets/sass/components/container"
 </style>
