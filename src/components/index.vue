@@ -5,12 +5,12 @@
       h1 Developers
       .dev
         .item
-          img.avatar(src="../assets/images/jimchen5209.webp", alt="alt")
+          img.avatar(src="../assets/images/jimchen5209.png", alt="alt")
           h4.name jimchen5209
           .info Main contributor
           .info Web Developer
         .item
-          img.avatar(src="../assets/images/woodman.webp", alt="alt")
+          img.avatar(src="../assets/images/woodman.png", alt="alt")
           h4.name WoodMan
           .info Contributor
           .info Web Developer
