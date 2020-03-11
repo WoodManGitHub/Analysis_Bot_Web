@@ -3,7 +3,7 @@
 # Analysis_Bot_Web
 ~~Chart use [Visavail.js](https://github.com/flrs/visavail#visavailjs---a-time-data-availability-chart)~~  
 Change chart to [vis-timeline](https://github.com/visjs/vis-timeline)  
-Thanks [JimChen5209](https://jimchen5209.me) for some technical help.
+Thanks [jimchen5209](https://jimchen5209.me) and [bill96012](https://github.com/bill96012)
 
 ## Project setup
 ```
