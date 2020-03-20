@@ -1,3 +1,4 @@
+# You can view an introduction to this repo on my blog: [here](https://blog.woodman.pw/2020/03/11/%E5%B0%88%E6%A1%88%E4%BB%8B%E7%B4%B9-Discord-Analysis-Bot/)  
 ![image](repo_image/home.png)
 
 # Analysis_Bot_Web
