@@ -14,6 +14,16 @@
           h4.name jimchen5209
           .info Contributor
           .info Web Developer
+        .item
+          img.avatar(src="../assets/images/bill96012.png", alt="")
+          h4.name bill96012
+          .info Contributor
+          .info UI/UX
+        .item
+          img.avatar(src="../assets/images/james58899.png", alt="")
+          h4.name james58899
+          .info Mouth Gun
+          .info Sunrise Sunset
 </template>
 
 <script>
