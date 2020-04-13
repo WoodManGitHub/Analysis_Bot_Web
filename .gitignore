@@ -22,3 +22,6 @@ yarn-error.log*
 
 # pm2
 ecosystem.config.js
+
+# config
+config.json
