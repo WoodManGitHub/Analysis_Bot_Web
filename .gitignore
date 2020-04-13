@@ -20,8 +20,5 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# pm2
-ecosystem.config.js
-
 # config
 config.json
