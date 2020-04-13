@@ -18,7 +18,8 @@ export default {
         tooltip: {
           followMouse: true
         },
-        stack: false
+        stack: false,
+        locale: 'en_US'
       }
 
       this.chart = new Timeline(container, items, groups, options)

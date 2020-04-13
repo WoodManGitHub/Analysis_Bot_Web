@@ -41,7 +41,7 @@ export default {
       this.loading = true
       await this.$axios.get(this.type, this.serverID).then(result => {
         const timeData = JSON.parse(result)
-        if (timeData.data.dataSets.length <= 1) {
+        if (!timeData.data) {
           this.error = true
         } else {
           this.timeData = timeData.data
