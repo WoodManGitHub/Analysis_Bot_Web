@@ -64,6 +64,7 @@ export default {
         const data = JSON.parse(result)
         if (!data.data.success) {
           this.error = true
+          this.loading = false
         } else {
           this.get().then(result => {
             if (result == null) return
@@ -74,6 +75,7 @@ export default {
     }
   },
   created () {
+    this.loading = true
     this.recaptcha()
   },
   watch: {
