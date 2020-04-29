@@ -7,7 +7,7 @@
     .input-group.mb-3
       input.col-md-6.form-control(type='text' placeholder='Enter Discord Server ID To Continue...' v-model.trim="serverID")
       router-link.col-md-2.btn(:class="(serverID)?'':'disabled'" :to="'/day/'+serverID") Today
-      router-link.col-md-2.btn(:class="(serverID)?'':'disabled'" :to="'/month/'+serverID") This Month
+      router-link.col-md-2.btn(:class="(serverID)?'':'disabled'" :to="'/week/'+serverID") This Week
       router-link.col-md-2.btn(:class="(serverID)?'':'disabled'" :to="'/all/'+serverID") All
     hr
     router-view

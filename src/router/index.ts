@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import day from '@/components/day.vue'
-import month from '@/components/month.vue'
+import week from '@/components/week.vue'
 import all from '@/components/all.vue'
 import index from '@/components/index.vue'
 
@@ -17,9 +17,9 @@ export default new Router({
     name: 'day',
     component: day
   }, {
-    path: '/month/:serverID',
-    name: 'month',
-    component: month
+    path: '/week/:serverID',
+    name: 'week',
+    component: week
   }, {
     path: '/all/:serverID',
     name: 'all',
