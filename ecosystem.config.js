@@ -4,10 +4,12 @@ module.exports = {
     script: 'serve',
     env: {
       PM2_SERVE_PATH: './dist',
-      PM2_SERVE_PORT: 2048
+      PM2_SERVE_PORT: 8789
+      //PM2_SERVE_SPA: 'true',
+      //PM2_SERVE_HOMEPAGE: '/index.html'
     },
     // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
-    // args: 'one two',
+    //args: '--spa',
     instances: 1,
     autorestart: true,
     watch: false,
@@ -21,7 +23,7 @@ module.exports = {
     production: {
       user: 'node',
       host: 'localhost',
-      port: '2048',
+      port: '8789',
       ref: 'origin/master',
       repo: 'https://github.com/WoodManGitHub/Analysis_Bot_Web.git',
       path: '/var/www/production',
