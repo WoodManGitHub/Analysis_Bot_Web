@@ -2,7 +2,8 @@
   div#visualization
 </template>
 <script>
-import { DataSet, Timeline } from 'vis-timeline'
+import { Timeline } from 'vis-timeline/peer/esm/vis-timeline-graph2d'
+import { DataSet } from 'vis-data/peer/esm/vis-data'
 
 export default {
   name: 'timeline',

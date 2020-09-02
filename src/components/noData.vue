@@ -1,12 +1,12 @@
 <template lang="pug">
   .root
-    h1.card-title Error occured
-    p Something wrong happened, check your input or contact developer.
+    h1.card-title Data Doesn't Exist
+    p Please enter the correct Discord server ID
 </template>
 
 <script>
 export default {
-  name: 'error',
+  name: 'noData',
   components: {}
 }
 </script>
