@@ -4,25 +4,28 @@
       button.refresh-btn.btn(v-if="!loading" @click="refresh()") Refresh
       loading(v-if="loading")
       error(v-if="error")
-      div(v-else="loading || error")
+      noData(v-if="noData")
+      div(v-else="loading || error || noData")
         timeline
-    how_to_use(v-if="error")
+    how_to_use(v-if="error || noData")
 </template>
 
 <script>
 import loading from './loading.vue'
 import error from './error.vue'
+import noData from './noData.vue'
 import timeline from './timeline.vue'
 import how_to_use from './how_to_use.vue'
 
 export default {
   name: 'container',
-  components: { loading, error, timeline, how_to_use },
+  components: { loading, error, noData, timeline, how_to_use },
   data () {
     return {
       timeData: null,
       loading: false,
-      error: false
+      error: false,
+      noData: false
     }
   },
   props: {
@@ -33,20 +36,37 @@ export default {
     serverID: {
       type: String,
       required: true
+    },
+    start: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    end: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   methods: {
     async get () {
+      this.timeData = null
       this.error = false
+      this.noData = false
       this.loading = true
-      await this.$axios.get(this.type, this.serverID).then(result => {
-        const timeData = JSON.parse(result)
-        if (!timeData.data) {
-          this.error = true
-        } else {
-          this.timeData = timeData.data
-        }
-      })
+      try {
+        await this.$axios.get(this.type, this.serverID, this.start, this.end).then(result => {
+          const timeData = JSON.parse(result)
+          if (!timeData.data) {
+            this.noData = true
+          } else {
+            this.timeData = timeData.data
+          }
+        })
+      } catch (e) {
+        console.error(e)
+        this.error = true
+      }
       this.loading = false
       return this.timeData
     },
