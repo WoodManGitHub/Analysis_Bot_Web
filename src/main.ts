@@ -10,7 +10,7 @@ import { VueReCaptcha } from 'vue-recaptcha-v3'
 Vue.use(axios)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-Vue.use(VueReCaptcha, { siteKey: process.env.RECAPTCHA_SITE_KEY })
+Vue.use(VueReCaptcha, { siteKey: process.env.VUE_APP_RECAPTCHA_SITE_KEY })
 Vue.config.productionTip = false
 
 new Vue({
