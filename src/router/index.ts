@@ -24,6 +24,6 @@ export default new Router({
     path: '/custom/:serverID',
     name: 'custom',
     component: custom,
-    props: (route) => ({ start: route.query.start, end: route.query.end })
+    props: route => ({ start: route.query.start, end: route.query.end })
   }]
 })

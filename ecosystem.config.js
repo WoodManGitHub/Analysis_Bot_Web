@@ -5,11 +5,11 @@ module.exports = {
     env: {
       PM2_SERVE_PATH: './dist',
       PM2_SERVE_PORT: 8789
-      //PM2_SERVE_SPA: 'true',
-      //PM2_SERVE_HOMEPAGE: '/index.html'
+      // PM2_SERVE_SPA: 'true',
+      // PM2_SERVE_HOMEPAGE: '/index.html'
     },
     // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
-    //args: '--spa',
+    // args: '--spa',
     instances: 1,
     autorestart: true,
     watch: false,

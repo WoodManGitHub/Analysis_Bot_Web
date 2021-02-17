@@ -13,6 +13,24 @@
         "no-consecutive-blank-lines": false,
         "object-literal-sort-keys": false,
         "ordered-imports": false,
+        "semicolon": false,
+        "space-before-function-paren": true,
+        "trailing-comma": false,
+        "no-console": false,
+        "arrow-parens": [
+            true,
+            "ban-single-arg-parens"
+        ],
+        "curly": [
+            true,
+            "ignore-same-line"
+        ],
+        "variable-name":{
+            "options":[
+                "allow-leading-underscore",
+                "allow-pascal-case"
+            ]
+        },
         "quotemark": [
             true,
             "single"

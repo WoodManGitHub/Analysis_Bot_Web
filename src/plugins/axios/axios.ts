@@ -1,19 +1,19 @@
 import axios from 'axios'
-const config = {
+const axiosConfig = {
   timeout: 60 * 1000
 }
 
-const _axios = axios.create(config)
+const _axios = axios.create(axiosConfig)
 
-_axios.interceptors.request.use((config) => {
+_axios.interceptors.request.use(config => {
   return config
-}, (error) => {
+}, error => {
   return Promise.reject(error)
 })
 
-_axios.interceptors.response.use((response) => {
+_axios.interceptors.response.use(response => {
   return response
-}, (error) => {
+}, error => {
   return Promise.reject(error)
 })
 

@@ -86,9 +86,9 @@ export default {
           this.error = true
           this.loading = false
         } else {
-          this.get().then(result => {
-            if (result == null) return
-            timeline.methods.draw(result)
+          this.get().then(timeResult => {
+            if (timeResult == null) return
+            timeline.methods.draw(timeResult)
           })
         }
       })
