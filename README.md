@@ -11,7 +11,7 @@ Change chart to [vis-timeline](https://github.com/visjs/vis-timeline)
 ## Project setup
 ```
 npm install
-Edit config.json.example and rename it config.json
+Edit cfg/setting.js.example and rename it cfg/setting.js
 ```
 
 ### Compiles and hot-reloads for development
