@@ -3,9 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY ./ .
-RUN cp config.json.example config.json
+RUN cp cfg/settings.js.example cfg/settings.js
 RUN npm run build
-RUN cp config.json dist/
 
 FROM nginx as production-stage
 RUN mkdir /app
