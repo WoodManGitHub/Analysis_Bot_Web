@@ -1,6 +1,6 @@
 <template lang='pug'>
   .page-root
-    how_to_use
+    howToUse
     .container
       h1 Developers
       .dev
@@ -27,11 +27,11 @@
 </template>
 
 <script>
-import how_to_use from './how_to_use.vue'
+import howToUse from './howToUse.vue'
 
 export default {
   name: 'index',
-  components: { how_to_use }
+  components: { howToUse }
 }
 </script>
 

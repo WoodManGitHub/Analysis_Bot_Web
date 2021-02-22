@@ -7,7 +7,7 @@
       noData(v-if="noData")
       div(v-else="loading || error || noData")
         timeline
-    how_to_use(v-if="error || noData")
+    howToUse(v-if="error || noData")
 </template>
 
 <script>
@@ -15,11 +15,11 @@ import loading from './loading.vue'
 import error from './error.vue'
 import noData from './noData.vue'
 import timeline from './timeline.vue'
-import how_to_use from './how_to_use.vue'
+import howToUse from './howToUse.vue'
 
 export default {
   name: 'container',
-  components: { loading, error, noData, timeline, how_to_use },
+  components: { loading, error, noData, timeline, howToUse },
   data () {
     return {
       timeData: null,

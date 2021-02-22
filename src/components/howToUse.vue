@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'how_to_use',
+  name: 'howToUse',
   components: {}
 }
 </script>
