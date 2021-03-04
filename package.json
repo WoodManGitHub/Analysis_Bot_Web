@@ -44,7 +44,7 @@
     "vis-uuid": "^1.1.4",
     "vue-axios": "^2.1.5",
     "vue-class-component": "^7.2.6",
-    "vue-cli-plugin-pug": "^1.0.7",
+    "vue-cli-plugin-pug": "^2.0.0",
     "vue-property-decorator": "^8.5.1",
     "vue-recaptcha-v3": "^1.9.0",
     "vue-router": "^3.5.1",
