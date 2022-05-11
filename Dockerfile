@@ -6,7 +6,7 @@ COPY ./ .
 RUN cp cfg/settings.js.example cfg/settings.js
 RUN npm run build
 
-FROM nginx as production-stage
+FROM nginx:1.21 as production-stage
 RUN mkdir /app
 COPY --from=build-stage /app/dist /app
 COPY nginx.conf /etc/nginx/nginx.conf
