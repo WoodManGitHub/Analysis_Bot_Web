@@ -1,5 +1,5 @@
 <template lang="pug">
-  container(type="week" :serverID="$route.params.serverID")
+container(type="week" :serverID="$route.params.serverID")
 </template>
 
 <script>

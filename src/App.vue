@@ -1,21 +1,21 @@
 <template lang='pug'>
-  #app
-    nav.navbar.navbar-dark.bg-dark
-      a.btn.nav-link(href=".") Home
-      a.btn.nav-link(href="https://github.com/WoodManGitHub/Analysis_Bot") GitHub
-    h1.title
-      a(href=".") Discord Online Analyzer
+#app
+  nav.navbar.navbar-dark.bg-dark
+    a.btn.nav-link(href=".") Home
+    a.btn.nav-link(href="https://github.com/WoodManGitHub/Analysis_Bot") GitHub
+  h1.title
+    a(href=".") Discord Online Analyzer
+  .input-group
+    input.col-xl-6.form-control(type='text' placeholder='Enter Discord Server ID To Continue...' v-model.trim="serverID")
+    router-link.col-xl-2.btn(:class="(serverID)?'':'disabled'" :to="'/day/'+serverID") Today
+    router-link.col-xl-2.btn(:class="(serverID)?'':'disabled'" :to="'/week/'+serverID") This Week
+    b-button.col-xl-2.btn(:class="(serverID)?'':'disabled'" :disabled="!serverID" v-b-toggle.customDate) Custom
+  b-collapse#customDate(:visible="customEnabled")
     .input-group
-      input.col-xl-6.form-control(type='text' placeholder='Enter Discord Server ID To Continue...' v-model.trim="serverID")
-      router-link.col-xl-2.btn(:class="(serverID)?'':'disabled'" :to="'/day/'+serverID") Today
-      router-link.col-xl-2.btn(:class="(serverID)?'':'disabled'" :to="'/week/'+serverID") This Week
-      b-button.col-xl-2.btn(:class="(serverID)?'':'disabled'" :disabled="!serverID" v-b-toggle.customDate) Custom
-    b-collapse#customDate(:visible="customEnabled")
-      .input-group
-        date-picker.col-xl-10.date-picker(prefix-class="xmx" placeholder="Pick a ranged date..." :disabled="!serverID" :disabled-date="checkDisabled" v-model="customTime" type="date" value-type="timestamp" range)
-        router-link.col-xl-2.btn(:class="(serverID && (customTime[0] !== null && customTime[1] !== null))?'':'disabled'" :to="'/custom/'+serverID+'?start='+(customTime[0]/1000)+'&end='+(customTime[1]/1000)") Search
-    hr
-    router-view
+      date-picker.col-xl-10.date-picker(prefix-class="xmx" placeholder="Pick a ranged date..." :disabled="!serverID" :disabled-date="checkDisabled" v-model="customTime" type="date" value-type="timestamp" range)
+      router-link.col-xl-2.btn(:class="(serverID && (customTime[0] !== null && customTime[1] !== null))?'':'disabled'" :to="'/custom/'+serverID+'?start='+(customTime[0]/1000)+'&end='+(customTime[1]/1000)") Search
+  hr
+  router-view
 </template>
 
 <script>
