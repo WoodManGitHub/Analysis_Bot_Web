@@ -1,7 +1,7 @@
 <template lang="pug">
-    .d-flex.justify-content-center
-        .spinner-border.text-light(role="status")
-            span.sr-only Loading...
+.d-lfex.justify-content-center
+  .spinner-border.text-light(role="status")
+    span.sr-only Loading...
 </template>
 
 <script>

@@ -1,13 +1,13 @@
 <template lang="pug">
-  .page-root
-    .container(:class="loading? 'transparent':''")
-      button.refresh-btn.btn(v-if="!loading" @click="refresh()") Refresh
-      loading(v-if="loading")
-      error(v-if="error")
-      noData(v-if="noData")
-      div(v-else="loading || error || noData")
-        timeline
-    how_to_use(v-if="error || noData")
+.page-root
+  .container(:class="loading? 'transparent':''")
+    button.refresh-btn.btn(v-if="!loading" @click="refresh()") Refresh
+    loading(v-if="loading")
+    error(v-if="error")
+    noData(v-if="noData")
+    div(v-else="loading || error || noData")
+      timeline
+  how_to_use(v-if="error || noData")
 </template>
 
 <script>
@@ -15,11 +15,11 @@ import loading from './loading.vue'
 import error from './error.vue'
 import noData from './noData.vue'
 import timeline from './timeline.vue'
-import how_to_use from './how_to_use.vue'
+import howToUse from './how_to_use.vue'
 
 export default {
   name: 'container',
-  components: { loading, error, noData, timeline, how_to_use },
+  components: { loading, error, noData, timeline, how_to_use: howToUse },
   data () {
     return {
       timeData: null,

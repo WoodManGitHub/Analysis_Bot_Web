@@ -1,5 +1,5 @@
 <template lang="pug">
-  container(type="custom" :serverID="$route.params.serverID" :start="start" :end="end")
+container(type="custom" :serverID="$route.params.serverID" :start="start" :end="end")
 </template>
 
 <script>

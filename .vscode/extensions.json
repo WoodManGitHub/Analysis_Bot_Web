@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "mhutchie.git-graph",
+    "vivaxy.vscode-conventional-commits",
+    "syler.sass-indented"
+  ]
+}

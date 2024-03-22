@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import day from '@/components/day.vue'
-import week from '@/components/week.vue'
-import custom from '@/components/custom.vue'
-import index from '@/components/index.vue'
+import day from '../components/day.vue'
+import week from '../components/week.vue'
+import custom from '../components/custom.vue'
+import index from '../components/index.vue'
 
 Vue.use(Router)
 
