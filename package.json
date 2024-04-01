@@ -16,8 +16,8 @@
     "vue": "^2.7.16"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "@vitejs/plugin-vue2": "^2.3.1",
     "@vue/eslint-config-standard": "^8.0.1",
     "@vue/eslint-config-typescript": "^13.0.0",
@@ -27,19 +27,19 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.23.0",
+    "eslint-plugin-vue": "^9.24.0",
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
-    "typescript": "^5.2.2",
+    "typescript": "^5.4.3",
     "vis-data": "^7.1.9",
     "vis-timeline": "^7.7.3",
     "vis-util": "^5.0.7",
     "vis-uuid": "^1.1.4",
-    "vite": "^5.2.0",
+    "vite": "^5.2.7",
     "vue-axios": "^2.1.5",
     "vue-recaptcha-v3": "^1.9.0",
     "vue-router": "^3.6.5",
-    "vue-tsc": "^2.0.6",
+    "vue-tsc": "^2.0.7",
     "vue2-datepicker": "^3.11.1"
   }
 }
