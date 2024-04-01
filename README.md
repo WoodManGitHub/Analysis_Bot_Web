@@ -9,24 +9,21 @@ You can check out introduction to this repo on my blog: [here](https://blog.wood
 Change chart to [vis-timeline](https://github.com/visjs/vis-timeline)  
 
 ## Project setup
-```
+```bash
 npm install
-Edit cfg/setting.js.example and rename it cfg/setting.js
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Start dev server
+```bash
+# Edit cfg/setting.js.example and rename it cfg/setting.js
+npm run dev
 ```
 
 ### Compiles and minifies for production
-```
+```bash
 npm run build
-```
-
-### Run your tests
-```
-npm run test
+cp cfg/setting.js.example dist/cfg/settings.js
+# Edit dist/cfg/setting.js
 ```
 
 ### Lints and fixes files

@@ -23,6 +23,7 @@ module.exports = {
     'no-console': 'off',
     'no-debugger': 'off',
     'vue/camelcase': 'off',
-    '@typescript-eslint/camelcase': 'off'
+    '@typescript-eslint/camelcase': 'off',
+    'vue/multi-word-component-names': 'off'
   }
 }

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import axios from './plugins/axios/index'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
-import '../cfg/settings'
+import '../cfg/settings.d.ts'
 
 Vue.use(axios)
 Vue.use(BootstrapVue)

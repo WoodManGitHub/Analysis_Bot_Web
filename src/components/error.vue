@@ -1,7 +1,7 @@
 <template lang="pug">
-  .root
-    h1.card-title Error occured
-    p Something wrong happened, check your input or contact developer.
+.root
+  h1.card-title Error occured
+  p Something wrong happened, check your input or contact developer.
 </template>
 
 <script>

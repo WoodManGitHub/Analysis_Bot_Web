@@ -1,7 +1,7 @@
 <template lang="pug">
-  .root
-    h1.card-title Data Doesn't Exist
-    p Please enter the correct Discord server ID
+.root
+  h1.card-title Data Doesn't Exist
+  p Please enter the correct Discord server ID
 </template>
 
 <script>

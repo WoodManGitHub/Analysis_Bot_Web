@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#visualization
+div#visualization
 </template>
 <script>
 import { Timeline } from 'vis-timeline/peer/esm/vis-timeline-graph2d'

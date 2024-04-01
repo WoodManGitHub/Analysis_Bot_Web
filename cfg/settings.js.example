@@ -1,7 +1,7 @@
-(function (window) {
+(function () {
   window.__env = window.__env || {}
 
   window.__env.captcha = {
     key: ''
   }
-})(this)
+})()
